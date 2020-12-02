@@ -1,7 +1,13 @@
 import days.One
+import days.Two
 
 fun main(args: Array<String>) {
-    println("Hello World!")
-    val one = One().executeA()
-    val oneB = One().executeB()
+    val day = Two()
+
+    //day.printA()
+
+    val resultA = day.executeA()
+    println(resultA)
+    val resultB = day.executeB()
+    println(resultB)
 }

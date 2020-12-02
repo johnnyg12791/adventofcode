@@ -8,4 +8,6 @@ object Util {
     fun readFileToIntMap(fileName: String)
             = hashMapOf<Int, Int>().also { File(fileName).forEachLine { line -> it[line.toInt()] = 1 } }
 
+    fun readFileToStringList(fileName: String)
+        = File(fileName).readLines()
 }
