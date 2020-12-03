@@ -1,8 +1,9 @@
 import days.One
+import days.Three
 import days.Two
 
 fun main(args: Array<String>) {
-    val day = Two()
+    val day = Three()
 
     //day.printA()
 
