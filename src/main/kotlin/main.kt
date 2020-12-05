@@ -1,11 +1,11 @@
+import days.Five
+import days.Four
 import days.One
 import days.Three
 import days.Two
 
 fun main(args: Array<String>) {
-    val day = Three()
-
-    //day.printA()
+    val day = Five()
 
     val resultA = day.executeA()
     println(resultA)
