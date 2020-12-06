@@ -4,7 +4,7 @@ import Util.readFileToStringList
 import kotlin.math.pow
 
 class Five {
-    
+
     companion object {
         const val examplefileLocation = "src/main/resources/inputs/examples/five.txt"
         const val fileLocation = "src/main/resources/inputs/five.txt"
