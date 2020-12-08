@@ -42,15 +42,12 @@ class Seven {
 
     fun findBagsInside(root: String, treeMap: MutableMap<String, List<SuitcaseContainer>>): Int{
         var sum = 0
-        treeMap.forEach { (suitcaseParent, suitcaseChild) ->
-            if (suitcaseParent == root) {
-                if (suitcaseChild.isEmpty()) return 1 // Base case: We have no children
-                suitcaseChild.forEach {
-                    sum += it.amount * findBagsInside(it.color, treeMap)
-                }
-                sum += 1 // To account for the actual bag of the 'root'
+        treeMap[root]?.also {  suitcaseChildren ->
+            if (suitcaseChildren.isEmpty()) return 1 // Base case: We have no children
+            suitcaseChildren.forEach {
+                sum += it.amount * findBagsInside(it.color, treeMap)
             }
-
+            sum += 1 // To account for the actual bag of the 'root'
         }
         return sum
     }
