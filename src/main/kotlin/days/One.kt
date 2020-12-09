@@ -1,5 +1,7 @@
 package days
 
+import Util.twoSum
+
 class One {
 
     companion object {
@@ -7,14 +9,11 @@ class One {
         const val targetSum = 2020
     }
 
-    fun executeA() {
-        val intMap = Util.readFileToIntMap(fileLocation)
-        intMap.forEach { (key, _) ->
-            if (intMap.containsKey(targetSum-key)) {
-                println("$key ${targetSum-key}, ${key * (targetSum-key)}")
-            }
+    fun executeA(): Long {
+        twoSum(Util.readFileToLongList(fileLocation), targetSum.toLong())?.let {
+            it.first * it.second
         }
-
+        return 0L
     }
 
     fun executeB() {

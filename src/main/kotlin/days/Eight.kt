@@ -43,20 +43,13 @@ class Eight {
             }
             linesUsed.add(index)
             val curLine = input[index]
-            val sign = curLine[4].toString()
-            val amt = curLine.substring(5).toInt()
+            val amt = curLine.substring(4).toInt()
             when(curLine.take(3)){
-                "nop" -> {
-                    index += 1
-                }
+                "nop" -> index += 1
+                "jmp" -> index += amt
                 "acc" -> {
-                    if(sign == "+") accumulator += amt
-                    else accumulator -= amt
+                    accumulator += amt
                     index += 1
-                }
-                "jmp" -> {
-                    if(sign == "+") index += amt
-                    else index -= amt
                 }
             }
         }
