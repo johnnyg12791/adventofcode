@@ -2,6 +2,7 @@ import days.Eight
 import days.Eleven
 import days.Five
 import days.Four
+import days.Fourteen
 import days.Nine
 import days.One
 import days.Seven
@@ -13,10 +14,10 @@ import days.Twelve
 import days.Two
 
 fun main(args: Array<String>) {
-    val day = Thirteen()
+    val day = Fourteen()
 
-    val resultA = day.executeA()
-    println(resultA)
+//    val resultA = day.executeA()
+//    println(resultA)
     val resultB = day.executeB()
     println(resultB)
 }
