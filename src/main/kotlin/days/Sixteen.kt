@@ -1,6 +1,7 @@
 package days
 
 import Util.readFileToStringList
+import Util.reduceToSingles
 
 class Sixteen {
 
@@ -81,7 +82,7 @@ class Sixteen {
             })
         }
 
-        val justnames = ticketClassOrdering.map { it.map { it.name }.toMutableList() }
+        val justnames = ticketClassOrdering.map { it.map { it.name } }
         var result = 1L
         reduceToSingles(justnames).forEachIndexed { idx, name ->
             if (name.startsWith("departure")) {
@@ -91,25 +92,6 @@ class Sixteen {
 
         return result
     }
-
-    // [[row], [class, row], [class, row, seat]] -> [row, class, seat]
-    fun reduceToSingles(input: List<MutableList<String>>): List<String> {
-        val singles = input.map { "-" }.toMutableList()
-        while (singles.contains("-")){
-            input.forEachIndexed { idx, listOfLists ->
-                if (listOfLists.size == 1){
-                    singles[idx] = listOfLists[0]
-                    // all other lists should remove this
-                }
-            }
-            input.forEach {
-                it.removeAll(singles)
-            }
-        }
-        println(singles)
-        return singles
-    }
-
 
     class TicketValidity(inputRow: String) {
         var name: String = ""

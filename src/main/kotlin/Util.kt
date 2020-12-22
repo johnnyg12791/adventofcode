@@ -24,4 +24,23 @@ object Util {
         }
         return null
     }
+
+    // [[row], [class, row], [class, row, seat]] -> [row, class, seat]
+    fun reduceToSingles(input: List<List<String>>): List<String> {
+        val singles = input.map { "-" }.toMutableList()
+        val mutableInput = input.map { it.toMutableList() }
+        while (singles.contains("-")){
+            mutableInput.forEachIndexed { idx, listOfLists ->
+                if (listOfLists.size == 1){
+                    singles[idx] = listOfLists[0]
+                    // all other lists should remove this
+                }
+            }
+            mutableInput.forEach {
+                it.removeAll(singles)
+            }
+        }
+        return singles
+    }
+
 }
