@@ -25,7 +25,7 @@ import days.TwentyTwo
 import days.Two
 
 fun main(args: Array<String>) {
-    val day = TwentyFive()
+    val day = Four()
 
     val resultA = day.executeA()
     println(resultA)
